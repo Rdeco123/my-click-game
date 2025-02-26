@@ -1,0 +1,59 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #87CEEB, #FFFFFF); /* Blauwe gradient naar wit */
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #2F4F4F; /* Donkerder blauwgroen */
+    text-shadow: 2px 2px 4px #00000033; /* Lichte schaduw voor diepte */
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #32CD32; /* Limoengroen */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Afgeronde hoeken */
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s; /* Gladde overgang bij hover */
+}
+
+button:hover {
+    background-color: #228B22; /* Donkerder groen bij hover */
+}
+
+#statsTable {
+    margin-top: 20px;
+    background-color: #FFFFFF88; /* Transparant wit */
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+table {
+    border-collapse: collapse;
+    width: 300px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #32CD32;
+    color: white;
+}
+
+td {
+    background-color: #F0FFF0;
+}

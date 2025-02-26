@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>My Click Game</title>
+</head>
+<body>
+    <header>
+        <img src="https://via.placeholder.com/400x100?text=Click+Game+Banner" alt="Game Banner" style="width: 400px;">
+    </header>
+    <h1>My Click Game</h1>
+    <p>Score: <span id="score">0</span></p>
+    <button id="clickButton">Click here!</button>
+    <button id="upgradeButton">Upgrade (Cost: <span id="upgradeCost">10</span>)</button>
+    <div id="statsTable">
+        <h2>Statistics</h2>
+        <table>
+            <tr><th>Total Clicks</th><td id="totalClicks">0</td></tr>
+            <tr><th>Upgrades</th><td id="totalUpgrades">0</td></tr>
+            <tr><th>Total Points Earned</th><td id="totalPoints">0</td></tr>
+        </table>
+    </div>
+    <script>
+        let score = 0;
+        let pointsPerClick = 1;
+        let upgradeCost = 10;
+        let totalClicks = 0;
+        let totalUpgrades = 0;
+        let totalPointsEarned = 0;
+
+        const scoreDisplay = document.getElementById("score");
+        const clickButton = document.getElementById("clickButton");
+        const upgradeButton = document.getElementById("upgradeButton");
+        const upgradeCostDisplay = document.getElementById("upgradeCost");
+        const totalClicksDisplay = document.getElementById("totalClicks");
+        const totalUpgradesDisplay = document.getElementById("totalUpgrades");
+        const totalPointsDisplay = document.getElementById("totalPoints");
+
+        // Functie om getallen met punten te formateren (1.000.000)
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        clickButton.addEventListener("click", function() {
+            score += pointsPerClick;
+            totalClicks += 1;
+            totalPointsEarned += pointsPerClick;
+            scoreDisplay.textContent = formatNumber(score);
+            totalClicksDisplay.textContent = formatNumber(totalClicks);
+            totalPointsDisplay.textContent = formatNumber(totalPointsEarned);
+        });
+
+        upgradeButton.addEventListener("click", function() {
+            if (score >= upgradeCost) {
+                score -= upgradeCost;
+                pointsPerClick *= 2;
+                upgradeCost += 10;
+                totalUpgrades += 1;
+                scoreDisplay.textContent = formatNumber(score);
+                upgradeCostDisplay.textContent = formatNumber(upgradeCost);
+                totalUpgradesDisplay.textContent = formatNumber(totalUpgrades);
+            } else {
+                alert("Not enough points!");
+            }
+        });
+    </script>
+</body>
+</html>

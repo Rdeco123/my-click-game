@@ -23,7 +23,7 @@ button {
     border: none;
     border-radius: 10px; /* Afgeronde hoeken */
     cursor: pointer;
-    margin: 10px;
+    margin: 10px; /* Ruimte tussen knoppen */
     transition: background-color 0.3s; /* Gladde overgang bij hover */
 }
 
